@@ -29,18 +29,18 @@ const LovifyScreen: React.FC<LovifyScreenProps> = ({ onLogin }) => {
 
       <RoundScreen
         roundNumber={1}
-        imageUri="https://img.freepik.com/free-vector/boy-girl-with-chat-bubble-message_24877-53848.jpg?semt=ais_hybrid&w=740&q=80"
-        question="What do you like?"
+        imageUri={require('../assets/images/onboarding1.png')}
+        leftText="Answer,"
+        rightText="What do you like?"
         onPrev={() => handleScroll(0)}
         onNext={() => handleScroll(2)}
       />
 
       <RoundScreen
         roundNumber={2}
-        imageUri="https://img.freepik.com/free-vector/couple-talking-online-chatting_24877-53846.jpg?semt=ais_hybrid&w=740&q=80"
-        question="Partner has to Guess"
-        prefix="Then, your"
-        highlight="Partner"
+        imageUri={require('../assets/images/onboarding2.png')}
+        leftText="Then, your Partner"
+        rightText="has to guess"
         onPrev={() => handleScroll(1)}
         onNext={() => handleScroll(3)}
       />

@@ -4,14 +4,31 @@ import Feather from 'react-native-vector-icons/Feather';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+import { NavigationProp } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Alert } from 'react-native';
+
+// Drawer route types
+type DrawerParamList = {
+  HomeScreen: undefined;
+  SettingsScreen: undefined;
+  AboutUs: undefined;
+  ContactUs: undefined;
+};
+
+type RootStackParamList = {
+  Onboarding: undefined;
+  Home: { screen?: keyof DrawerParamList };
+};
 
 interface Props {
   onLogout: () => void;
 }
 
 const DrawerContent: React.FC<Props> = ({ onLogout }) => {
-  const navigation = useNavigation();
+  // ✅ correct type for drawer navigation
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -24,35 +41,65 @@ const DrawerContent: React.FC<Props> = ({ onLogout }) => {
           style={styles.avatar}
         />
         <Text style={styles.name}>Rushikesh</Text>
-        {/* <TouchableOpacity
-          style={styles.closeIcon}
-          onPress={() => navigation.dispatch(DrawerActions.closeDrawer())}
-        >
-          <Feather name="x" size={26} color="#444" />
-        </TouchableOpacity> */}
       </View>
 
       <View style={styles.divider} />
 
       {/* Menu items */}
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() =>
+          navigation.navigate('Home', { screen: 'SettingsScreen' })
+        }
+      >
         <Feather name="settings" size={20} color="#FF4F72" />
         <Text style={styles.menuText}>Settings</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => navigation.navigate('Home', { screen: 'AboutUs' })}
+      >
         <Feather name="info" size={20} color="#FF4F72" />
         <Text style={styles.menuText}>About us</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => navigation.navigate('Home', { screen: 'ContactUs' })}
+      >
         <MaterialIcons name="mail-outline" size={20} color="#FF4F72" />
         <Text style={styles.menuText}>Contact us</Text>
       </TouchableOpacity>
 
       <View style={styles.dividerLight} />
 
-      <TouchableOpacity style={styles.menuItem} onPress={onLogout}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => {
+          Alert.alert(
+            'Logout',
+            'Are you sure you want to logout?',
+            [
+              { text: 'Cancel', style: 'cancel' },
+              {
+                text: 'Logout',
+                style: 'destructive',
+                onPress: async () => {
+                  try {
+                    await AsyncStorage.clear();
+                    console.log('✅ AsyncStorage cleared');
+                    onLogout();
+                  } catch (error) {
+                    console.log('❌ Error clearing storage:', error);
+                  }
+                },
+              },
+            ],
+            { cancelable: true },
+          );
+        }}
+      >
         <AntDesign name="logout" size={20} color="#FF4F72" />
         <Text style={[styles.menuText, { color: '#444' }]}>Logout</Text>
       </TouchableOpacity>
@@ -86,11 +133,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#333',
     marginTop: 10,
-  },
-  closeIcon: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
   },
   divider: {
     height: 1,

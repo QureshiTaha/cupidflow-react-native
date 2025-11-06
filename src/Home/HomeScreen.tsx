@@ -11,7 +11,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
-import { SafeAreaView } from 'react-native-safe-area-context'; // ✅ use from safe-area-context
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = ({ onLogout }: any) => {
   const [roomCode, setRoomCode] = useState('');
@@ -32,12 +32,13 @@ const HomeScreen = ({ onLogout }: any) => {
         {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity
+            style={{ position: 'absolute', left: 0 }} // ✅ keeps icon clickable but text centered
             onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
           >
             <Feather name="menu" size={28} color="#fff" />
           </TouchableOpacity>
           <Text style={styles.logo}>
-            Lov<Text style={styles.logoAccent}>ify</Text>
+            Cu<Text style={styles.logoAccent}>pid</Text>
           </Text>
         </View>
 
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
     width: '90%',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center', // ✅ centers Cupid text
     marginTop: 10,
   },
 
@@ -120,6 +121,8 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '700',
     color: '#fff',
+    textAlign: 'center',
+    alignSelf: 'center',
   },
   logoAccent: {
     color: '#FF4F72',

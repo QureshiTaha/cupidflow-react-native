@@ -5,6 +5,9 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import LovifyScreen from './Onboarding/LovifyScreen';
 import HomeScreen from './Home/HomeScreen';
 import DrawerContent from './Home/DrawerContent';
+import SettingsScreen from './Home/SettingsScreen';
+import AboutUs from './Home/AboutUs';
+import ContactUs from './Home/ContactUs';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -17,11 +20,14 @@ const DrawerNavigator = ({ onLogout }: { onLogout: () => void }) => {
         headerShown: false,
         drawerType: 'slide',
         overlayColor: 'rgba(0,0,0,0.4)',
-        sceneContainerStyle: { backgroundColor: '#101031' },
+        drawerContentStyle: { backgroundColor: '#101031' },
       }}
       drawerContent={props => <DrawerContent {...props} onLogout={onLogout} />}
     >
-      <Drawer.Screen name="HomeMain" component={HomeScreen} />
+      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Drawer.Screen name="AboutUs" component={AboutUs} />
+      <Drawer.Screen name="ContactUs" component={ContactUs} />
     </Drawer.Navigator>
   );
 };

@@ -3,6 +3,8 @@ import { ActivityIndicator, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import AppNavigator from './src/AppNavigator';
+import { getData } from './src/hooks/useAsyncStorage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);
@@ -18,7 +20,13 @@ const App = () => {
   const checkLoginStatus = async () => {
     try {
       const userInfo = await GoogleSignin.getCurrentUser();
-      setIsLoggedIn(!!userInfo);
+      const token = await getData('authToken');
+      // ✅ If token exists or Google user found, mark as logged in
+      if (token || userInfo) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
     } catch {
       setIsLoggedIn(false);
     }
@@ -28,6 +36,7 @@ const App = () => {
   const handleLogout = async () => {
     try {
       await GoogleSignin.signOut();
+      await AsyncStorage.clear();
     } catch (e) {
       console.warn('Error signing out:', e);
     }

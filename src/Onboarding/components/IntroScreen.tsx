@@ -29,14 +29,21 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onNext }) => {
           <Text style={styles.logo}>
             Cu<Text style={styles.logoAccent}>pid</Text>
           </Text>
-          <View style={{ marginTop: 'auto', alignItems: 'center' }}>
+          <View
+            style={{
+              position: 'absolute',
+              bottom: '20%',
+              right: 16,
+              alignItems: 'flex-end',
+            }}
+          >
             <Text style={styles.mainTitle}>SHARE EVERYTHING</Text>
             <Text style={styles.subTitle}>without saying</Text>
-            <TouchableOpacity style={styles.nextBtn} onPress={onNext}>
-              <Feather name="arrow-right" size={28} color="#fff" />
-            </TouchableOpacity>
           </View>
         </View>
+        <TouchableOpacity style={styles.nextBtn} onPress={onNext}>
+          <Feather name="arrow-right" size={28} color="#fff" />
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -47,17 +54,25 @@ export default IntroScreen;
 const styles = StyleSheet.create({
   bgImage: { height: '100%', width: screenWidth, justifyContent: 'flex-end' },
   overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.3)', padding: 20 },
-  logo: { fontSize: 38, fontWeight: '700', color: '#fff', marginTop: 60 },
+  logo: {
+    fontSize: 32,
+    fontWeight: '700',
+    color: '#fff',
+    marginTop: 20,
+    textAlign: 'center',
+  },
   logoAccent: { color: '#FF5277' },
   mainTitle: {
     fontSize: 28,
-    fontWeight: '700',
+    fontWeight: '500',
+    letterSpacing: 1.2,
     color: '#fff',
     textAlign: 'center',
   },
   subTitle: {
     fontSize: 18,
     color: '#ffb3c1',
+    letterSpacing: 1.1,
     marginTop: 8,
     textAlign: 'center',
   },
@@ -68,6 +83,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 25,
+    position: 'absolute',
+    bottom: 20,
+    right: 22,
   },
 });
