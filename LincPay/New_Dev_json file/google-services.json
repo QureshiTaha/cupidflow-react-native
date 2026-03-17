@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "715055673513",
+    "project_id": "blush-iceweb",
+    "storage_bucket": "blush-iceweb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715055673513:android:472e453a1b0061fc6139b8",
+        "android_client_info": {
+          "package_name": "com.blush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715055673513-e0mfmqeh2pb0jknojauicts2e5r7lmue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blush",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "715055673513-j69r1emipult6kbovbv0t2da7ots0i03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZkRLiXRHFlz0ki1ZY8WfTbNB-5-wdAUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715055673513-j69r1emipult6kbovbv0t2da7ots0i03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

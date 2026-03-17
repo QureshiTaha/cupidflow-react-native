@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "242615216218",
+    "project_id": "datingapp-41cc8",
+    "storage_bucket": "datingapp-41cc8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242615216218:android:8c4355c0d04585ad631063",
+        "android_client_info": {
+          "package_name": "com.blush.digitalelpis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242615216218-n80c6lutmujsoki0s5qbr01lf8g5vllg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blush.digitalelpis",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "242615216218-7oqfjrdn5tlvo5cd7bb78a38tu2d92f8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfFAl3vJyhLh3vuXjPvo8BQChEeOphbyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242615216218-7oqfjrdn5tlvo5cd7bb78a38tu2d92f8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "242615216218-fl4prl9geo8r055rubcpnur41fj8e0nh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.blush.digitalelpis"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

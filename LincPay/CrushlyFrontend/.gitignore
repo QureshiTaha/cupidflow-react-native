@@ -1,0 +1,66 @@
+# Node modules
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+*.keystore
+*.jks
+
+# iOS
+ios/build/
+ios/Pods/
+ios/*.xcworkspace
+ios/*.xcuserdata
+
+# Expo / EAS
+.eas/
+*.p8
+*.p12
+*.mobileprovision
+
+# Metro
+.metro-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# Debug
+*.orig
+
+# Firebase (IMPORTANT ⚠️)
+google-services.json
+GoogleService-Info.plist
+
+# IDEs
+.vscode/
+.idea/
+
+# Mac
+*.swp
