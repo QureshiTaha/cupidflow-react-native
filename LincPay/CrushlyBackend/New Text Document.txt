@@ -1,0 +1,23 @@
+const path = require('path');
+const ffmpeg = require('fluent-ffmpeg');
+const ffmpegPath = require('ffmpeg-static');
+
+ffmpeg.setFfmpegPath(ffmpegPath); // Use bundled ffmpeg binary
+
+const videoPath = path.join(__dirname, 'uploads/forbiggerfun-1745393640194.mp4');
+const outputDir = path.join(__dirname, 'uploads');
+console.log(videoPath);
+
+ffmpeg(videoPath)
+  .on('end', () => {
+    console.log('✅ Thumbnail generated!');
+  })
+  .on('error', (err) => {
+    console.error('❌ FFmpeg error:', err.message);
+  })
+  .screenshots({
+    timestamps: ['5'], // at 5 seconds
+    filename: 'thumb-my-video.png',
+    folder: outputDir,
+    size: '320x240'
+  });

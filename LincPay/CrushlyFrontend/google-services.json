@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "709069936897",
+    "project_id": "dilmilapp-2026",
+    "storage_bucket": "dilmilapp-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709069936897:android:4c205d543c255448932300",
+        "android_client_info": {
+          "package_name": "com.dilmil.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709069936897-igtl806btthl0n17hbp07pnn00dksd2i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dilmil.app",
+            "certificate_hash": "7b6aa82c6bcdf731fc56619936300bac108aaf6b"
+          }
+        },
+        {
+          "client_id": "709069936897-ncmsgd90vdbui5892kndds08q7ccv7i9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dilmil.app",
+            "certificate_hash": "dbbb301e80c88ce4678f6ded64298b85efee11f6"
+          }
+        },
+        {
+          "client_id": "709069936897-t3hh04bo2f96ai5lqsv6ddgq9chj4aj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXCvysQl4q7_9F2-n4ofMcmEfMQ7LIhcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709069936897-t3hh04bo2f96ai5lqsv6ddgq9chj4aj9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "709069936897-n9a4mog0eunoki2cq6075n27hpcpkk4u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dilmil.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

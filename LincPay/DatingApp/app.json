@@ -4,19 +4,27 @@
     "slug": "DatingApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/adaptive-icon.png",
     "scheme": "datingapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.blush.digitalelpis",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      "package": "com.blush.digitalelpis",
+      "googleServicesFile": "./google-services.json",
+ "config": {
+    "googleSignIn": {
+      "certificateHash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+    }
+  },
+     "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#000000",
+        "splashscreen_background_color": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
@@ -38,7 +46,12 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-web-browser",
+      "expo-asset",
+      "@react-native-firebase/app",
+      "@react-native-firebase/messaging",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true,
